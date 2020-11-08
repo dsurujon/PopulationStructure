@@ -1,0 +1,69 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r}
+library(ggtree)
+library(treeio)
+library(gplots)
+
+PG350_tree <- read.newick('PG350_phylogenies/RAxML_bestTree.PG350')
+PG350_tree_norecomb <- read.newick('PG350_phylogenies/PG350.node_labelled.final_tree.tre')
+PG350_snpdist <- read.table('PG350_phylogenies/PG350_dists.txt', sep = '\t',
+                            header = T, row.names = 1)
+PG350_snpdist_norecomb <- read.table('PG350_phylogenies/PG350_norecomb_dists.txt', sep='\t',
+                                     header = T, row.names = 1)
+```
+Plot distance matrices
+```{r}
+png('PG350_phylogenies/PG350_snpdist.png', width=1000, height=1000, units = "px")
+heatmap.2(as.matrix(PG350_snpdist), symm=T, 
+        trace = "none", density.info = "none")
+dev.off()
+
+png('PG350_phylogenies/PG350_snpdist_norecomb.png', width=1000, height=1000, units = "px")
+heatmap.2(as.matrix(PG350_snpdist_norecomb), symm=T, 
+        trace = "none", density.info = "none")
+dev.off()
+```
+
+Plot phylogenetic trees
+```{r}
+ggtree(PG350_tree, layout = "circular")+geom_treescale()
+ggsave('PG350_phylogenies/PG350_tree.png', width=10, height=10, units = "in")
+
+ggtree(PG350_tree_norecomb, layout = "circular")+geom_treescale()
+ggsave('PG350_phylogenies/PG350_tree_norecomb.png', width=10, height=10, units = "in")
+```
+
+
+Repeat the above for PGall
+```{r}
+PGall_tree <- read.newick('PGall_phylogenies/RAxML_bestTree.PGall')
+PGall_tree_norecomb <- read.newick('PGall_phylogenies/PGall.node_labelled.final_tree.tre')
+PGall_snpdist <- read.table('PGall_phylogenies/PGall_dists.txt', sep = '\t',
+                            header = T, row.names = 1)
+PGall_snpdist_norecomb <- read.table('PGall_phylogenies/PGall_norecomb_dists.txt', sep='\t',
+                                     header = T, row.names = 1)
+
+```
+
+Plot DMs and trees
+```{r}
+png('PGall_phylogenies/PGall_snpdist.png', width=1000, height=1000, units = "px")
+heatmap.2(as.matrix(PGall_snpdist), symm=T, 
+        trace = "none", density.info = "none")
+dev.off()
+
+png('PGall_phylogenies/PGall_snpdist_norecomb.png', width=1000, height=1000, units = "px")
+heatmap.2(as.matrix(PGall_snpdist_norecomb), symm=T, 
+        trace = "none", density.info = "none")
+dev.off()
+
+ggtree(PGall_tree, layout = "circular")+geom_treescale()
+ggsave('PGall_phylogenies/PGall_tree.png', width=10, height=10, units = "in")
+
+ggtree(PGall_tree_norecomb, layout = "circular")+geom_treescale()
+ggsave('PGall_phylogenies/PGall_tree_norecomb.png', width=10, height=10, units = "in")
+```
