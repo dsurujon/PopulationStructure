@@ -23,7 +23,8 @@ If X’ is essential, predict X to be essential. If X’ is uncertain, predict X
 ## Aim 2: Does phylogenetic information improve the adapted gene (AG) predictor? 
 #### Aim 2a: Test whether the mutations observed in in vitro antibiotic-adapted strains appear in resistant strains of a specific lineage
 Mutations and genome coordinates are in `data/mutations/`    
-
+Antibiotic resistance phenotype in `data/NIHMS474991-supplement-2.xlsx` - Either use the MIC as-is, or label strains Susceptible/Resistant based on the clinical breakpoints: https://www.eucast.org/clinical_breakpoints/    
+Alignment and Newick trees in `/store/data/Clustering/output/PanX/Nijmegen_contigs/vis/geneCluster/`    
 	
 #### Aim 2b: Evaluate the similarity between the species’ and each genes’ evolutionary history
 Use panX output here: `/store/data/Clustering/output/PanX/Nijmegen_contigs`    
