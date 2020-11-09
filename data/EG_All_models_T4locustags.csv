@@ -1,0 +1,107 @@
+StrainspecificEssential,ExplanatoryFeature,Coefficient,ExplanatoryFeature.GeneProduct,ExplanatoryFeatre.T4,StrainspecificEssential.T4
+110_0,1510_0,-0.066577832,hypothetical protein,,SP_0805
+110_0,20_0,0.010698854,hypothetical protein,NA,SP_0805
+1189_0,1081_5,9.48E-17,XRE family transcriptional regulator,NA,SP_0502
+1189_0,121_2,0.002495604,glycosyl transferase family 2,NA,SP_0502
+1189_0,1227_121,0.002865253,IS1380-like element ISSpn5 family transposase,NA,SP_0502
+1189_0,1227_45,0.000470943,IS1380-like element ISSpn5 family transposase,NA,SP_0502
+1189_0,1489_7,0.027410577,IS5 family transposase,NA,SP_0502
+1189_0,1524_0,-3.74E-17,capsular polysaccharide biosynthesis protein CpsC,SP_0348,SP_0502
+1189_0,1574_1,0.006005626,PTS maltose transporter subunit IIBC,NA,SP_0502
+1189_0,1711_0,-0.37280156,phosphoribosylaminoimidazole carboxylase,SP_0055,SP_0502
+1189_0,1934_0,-4.85E-06,hypothetical protein,SP_0997,SP_0502
+1189_0,1986_0,0.004865615,glycosyl transferase,,SP_0502
+1189_0,2219_0,0.023791295,ThiF family adenylyltransferase,SP_0695,SP_0502
+1189_0,2541_0,-1.36E-05,choline-binding protein,SP_0117,SP_0502
+1189_0,286_17,0.001569202,IS30-like element ISSpn8 family transposase,NA,SP_0502
+1189_0,286_36,1.87E-17,IS30-like element ISSpn8 family transposase,NA,SP_0502
+1189_0,286_70,0.372226576,IS30-like element ISSpn8 family transposase,NA,SP_0502
+1189_0,289_4,-0.017971279,hypothetical protein,NA,SP_0502
+1189_0,2893_0,-0.02225872,ABC transporter ATP-binding protein,NA,SP_0502
+1189_0,3221_0,0.005052726,ATP-binding protein,,SP_0502
+1189_0,36_0,-6.48E-08,PTS beta-glucoside transporter subunit IIBCA,SP_0577,SP_0502
+1189_0,65_0,-0.024418208,sigma-70 family RNA polymerase sigma factor,SP_2006,SP_0502
+1189_0,866_0,-6.80E-07,biofilm-regulating peptide BriC,SP_0429,SP_0502
+1269_0,1555_0,-0.08193392,DNA-binding protein,SP_1292,SP_0013
+1269_0,2519_0,-0.050515377,phosphoribosylaminoimidazolesuccinocarboxamide synthase,,SP_0013
+13_0,1933_5,0.140203437,hypothetical protein,NA,SP_1713
+13_0,1933_6,8.96E-17,hypothetical protein,NA,SP_1713
+135_0,1186_2,-0.01087028,MarR family transcriptional regulator,NA,SP_0493
+135_0,1227_11,-0.048146412,IS1380-like element ISSpn5 family transposase,SP_1418,SP_0493
+1629_0,1011_0,-0.060408766,McrB family protein,SP_1251,SP_1298
+1629_0,2409_0,1.30E-15,hypothetical protein,NA,SP_1298
+1629_0,2872_0,5.90E-17,DUF1211 domain-containing protein,NA,SP_1298
+1629_0,315_0,-1.06E-15,DUF3169 family protein,SP_2117,SP_1298
+1629_0,360_2,0.37514415,alpha-glycosidase,NA,SP_1298
+1629_0,3604_0,0.002269296,hypothetical protein,NA,SP_1298
+1735_0,1403_1,-0.049932044,ribose-phosphate diphosphokinase,NA,SP_0129
+1735_0,1555_0,-0.190247785,DNA-binding protein,SP_1292,SP_0129
+1735_0,1923_0,0.077655982,hypothetical protein,NA,SP_0129
+1735_0,219_1,-0.068770147,hypothetical protein,NA,SP_0129
+1808_0,1403_1,-0.336692656,ribose-phosphate diphosphokinase,NA,SP_0611
+1808_0,1574_1,0.099564389,PTS maltose transporter subunit IIBC,NA,SP_0611
+1808_0,1973_2,-0.030171056,hypothetical protein,NA,SP_0611
+1808_0,247_0,0.149344626,lanthionine synthetase,SP_0380,SP_0611
+1846_0,289_0,-0.09126606,hypothetical protein,NA,SP_1942
+2067_0,1060_0,-7.03E-16,tyrosine-protein phosphatase CpsB,NA,SP_0120
+2067_0,2171_3,-0.095564801,LytR family transcriptional regulator,NA,SP_0120
+2067_0,2386_0,-0.023775858,argininosuccinate synthase,SP_0113,SP_0120
+2067_0,289_4,-0.073871666,hypothetical protein,NA,SP_0120
+2067_0,830_0,0.04552545,hypothetical protein,SP_1640,SP_0120
+2100_0,943_9,-0.05956167,DNA alkylation repair protein,NA,SP_0549
+2315_0,1112_4,0.009458901,hypothetical protein,NA,SP_2009
+2315_0,1608_0,1.29E-05,peptidase domain-containing ABC transporter,NA,SP_2009
+2315_0,1711_0,-0.030119666,phosphoribosylaminoimidazole carboxylase,SP_0055,SP_2009
+2315_0,1973_3,0.027878231,hypothetical protein,NA,SP_2009
+2315_0,329_0,-0.050417171,lactococcin 972 family bacteriocin,SP_0109,SP_2009
+2315_0,580_0,-3.10E-16,ABC transporter ATP-binding protein,SP_0111,SP_2009
+2343_0,1073_1,-0.02165326,phospho-sugar mutase,NA,SP_1178
+2343_0,1305_0,0.054919566,nucleotidyltransferase family protein,SP_0260,SP_1178
+2343_0,2657_0,-0.000153366,hypothetical protein,NA,SP_1178
+2343_0,7_70,-0.000371209,ISL3 family transposase,NA,SP_1178
+2343_0,908_0,0.058940326,glycoside hydrolase family 31 protein,SP_0312,SP_1178
+252_0,1533_0,0.150160181,ImmA/IrrE family metallo-endopeptidase,SP_1809,SP_1569
+252_0,2246_0,3.44E-16,hypothetical protein,SP_1810,SP_1569
+26_0,1008_0,0.169688525,"circular bacteriocin, circularin A/uberolysin family",NA,SP_1361
+26_0,794_5,3.85E-16,peptide cleavage/export ABC transporter,NA,SP_1361
+290_0,1_6,-4.70E-17,hypothetical protein,NA,SP_0214
+290_0,1032_0,7.05E-17,excinuclease ABC subunit A,SP_0188,SP_0214
+290_0,2088_0,1.88E-16,type I toxin-antitoxin system Fst family toxin,SP_0258,SP_0214
+290_0,65_2,0.175285424,sigma-70 family RNA polymerase sigma factor,SP_0014,SP_0214
+290_0,721_2,-2.35E-16,hypothetical protein,,SP_0214
+290_0,825_0,2.58E-16,fratricide two-peptide bacteriocin subunit CibB,SP_0124,SP_0214
+298_0,289_4,-0.055647142,hypothetical protein,NA,SP_0555
+372_0,329_0,-0.276084711,lactococcin 972 family bacteriocin,SP_0109,SP_1229
+372_0,580_0,-1.59E-15,ABC transporter ATP-binding protein,SP_0111,SP_1229
+372_0,621_0,-0.015183706,glycosyltransferase family 2 protein,,SP_1229
+372_0,794_3,-0.165163326,bacteriocin cleavage/export ABC transporter,SP_0042,SP_1229
+483_0,226_0,0.304790309,CopG family transcriptional regulator,SP_1042,SP_1999
+508_0,1161_4,0.000237797,MFS transporter,NA,SP_0122
+508_0,1973_2,-0.045252564,hypothetical protein,NA,SP_0122
+508_0,2519_0,-0.154061386,phosphoribosylaminoimidazolesuccinocarboxamide synthase,,SP_0122
+543_0,2519_0,-0.312840234,phosphoribosylaminoimidazolesuccinocarboxamide synthase,,SP_0435
+543_0,329_0,-0.027840719,lactococcin 972 family bacteriocin,SP_0109,SP_0435
+543_0,580_0,-1.01E-16,ABC transporter ATP-binding protein,SP_0111,SP_0435
+567_0,1008_0,0.024460581,"circular bacteriocin, circularin A/uberolysin family",NA,SP_0403
+567_0,1592_0,4.83E-17,hypothetical protein,NA,SP_0403
+567_0,2386_0,-0.432783856,argininosuccinate synthase,SP_0113,SP_0403
+578_0,445_54,0.071045189,hypothetical protein,,SP_1491
+643_0,1044_0,-0.144896572,YbbR-like domain-containing protein,SP_1560,SP_2107
+674_0,1973_3,0.046229642,hypothetical protein,NA,SP_0056
+674_0,209_0,0.244410522,hypothetical protein,NA,SP_0056
+674_0,2579_0,0.129143496,hypothetical protein,SP_2147,SP_0056
+674_0,3262_0,-0.00488963,hypothetical protein,,SP_0056
+674_0,494_2,0.159177075,serine protease,NA,SP_0056
+674_0,496_0,0.066644121,lysyl-tRNA synthetase,NA,SP_0056
+674_0,637_1,0.038402891,transposase,NA,SP_0056
+674_0,794_3,-0.23516616,bacteriocin cleavage/export ABC transporter,SP_0042,SP_0056
+674_0,958_0,-0.201631888,alpha/beta hydrolase,SP_0882,SP_0056
+779_0,2693_0,-0.01476785,ABC transporter ATP-binding protein,SP_0242,SP_0416
+779_0,943_9,0.161437095,DNA alkylation repair protein,NA,SP_0416
+904_0,1207_0,-0.000427796,HlyD family efflux transporter periplasmic adaptor subunit,NA,SP_1626
+904_0,1429_0,-8.24E-17,AraC family transcriptional regulator,NA,SP_1626
+904_0,219_1,-0.113220552,hypothetical protein,NA,SP_1626
+904_0,65_2,0.021871693,sigma-70 family RNA polymerase sigma factor,SP_0014,SP_1626
+904_0,7_36,-0.001212495,ISL3 family transposase,NA,SP_1626
+904_0,7_65,-2.76E-16,ISL3 family transposase,NA,SP_1626
+904_0,825_0,6.90E-17,fratricide two-peptide bacteriocin subunit CibB,SP_0124,SP_1626

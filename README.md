@@ -11,13 +11,18 @@ Spearman rank correlations (since the distributions are unbalanced bimodal) betw
 
 #### Aim 1c: Train and evaluate a model that use genetic distance to predict essentiality of individual genes in a given strain. 
 Developed a simple predictor of essentiality (no model training required):
-•	Input: gene X in strain Y. Output: is X essential in Y? 
-•	Algorithm: let Y’ be the strain with the smallest SNP distance to Y. 
-Let X’ be the homolog of X in the Y’ genome    
+•	Input: gene X in strain Y. Output: is X essential in Y?     
+•	Algorithm: let Y’ be the strain with the smallest SNP distance to Y.     
+Let X’ be the homolog of X in the Y’ genome     
 If X’ is essential, predict X to be essential. If X’ is uncertain, predict X to be uncertain. If X’ is absent or nonessential, predict X’ to be nonessential.     
 ![Confusion Matrix](code/Aim1c_cm.svg)    
     
-	 
+#### Aim 1c (ii) Literature Search	
+For genes whose essentiality can be predicted with the presence/absence of 1 or 2 other genes, do a literature search to determine the characterized interaction of the gene products.      
+Relevant data: `data/EG_All_models_T4locustags.csv`.     
+This table lists the genes relevant for the prediction of essentiality of another gene.     
+For each `StrainspecificEssential` gene cluster, a regression model was fit to explain its essentiality. This model uses the presence/absence information for one or more accessory genes as input. E.g. the essentiality of gene cluster `110_0` (where the TIGR4 homolog is `SP_0805`) can be explained using the presence and absence of 2 genes clusters: `1510_0` and `20_0`. When available, the gene product annotation, and TIGR4 homolog of the explanatory gene is included.      
+
 	 
 	 
 ## Aim 2: Does phylogenetic information improve the adapted gene (AG) predictor? 
