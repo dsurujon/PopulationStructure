@@ -1,0 +1,16 @@
+panX_cluster,panX_description,T4_locusTag
+GC00000082_3,hypothetical_protein,SP_1274
+GC00000082_4,hypothetical_protein,SP_1274
+GC00000082_6,hypothetical_protein,SP_1274
+GC00000082_7,hypothetical_protein,SP_1274
+GC00000082_8,hypothetical_protein,SP_1274
+GC00000214_2,wcaJ_2_UDP-glucose:undecaprenyl-phosphate_glucose-1-phosphate_transferase,SP_0350
+GC00000214_3,"pglC_Undecaprenyl_phosphate_N,N'-diacetylbacillosamine_1-phosphate_transferase",SP_0350
+GC00000214_5,hypothetical_protein,SP_0350
+GC00000214_6,hypothetical_protein,SP_0350
+GC00000214_7,epsL_putative_sugar_transferase_EpsL,SP_0350
+GC00000214_8,wcaJ_UDP-glucose:undecaprenyl-phosphate_glucose-1-phosphate_transferase,SP_0350
+GC00000569,pbpX_Penicillin-binding_protein_2X,SP_0336
+GC00000887,gdpP_Cyclic-di-AMP_phosphodiesterase_GdpP,SP_2205
+GC00000955,murE_UDP-N-acetylmuramoyl-L-alanyl-D-glutamate--L-_lysine_ligase,SP_1530
+GC00001067,putative_ABC_transporter_ATP-binding_protein,SP_1358

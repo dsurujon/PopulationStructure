@@ -1,0 +1,73 @@
+---
+title: "Overlaying antibiotic susceptibility metadata onto PG350 phylogenies with ggtree"
+author: "Jakob Weiss"
+date: "11/29/2020"
+output: html_document
+---
+
+Aim: given PG350 phylogenies with and without recombination events, plot a circular tree of each, with an outside heatmap showing susceptibility to seven antibiotics.
+
+This code is modeled from [section 4.3.7](https://guangchuangyu.github.io/ggtree-book/chapter-ggtree.html#advanced-annotation-on-the-phylogenetic-tree) of the ggtree book.
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+```{r lib}
+library(ggtree)
+library(plyr)
+```
+
+Load data:
+```{r load}
+tree_noRecomb <- read.tree('../PG350.node_labelled.final_tree.tre')
+tree_withRecomb <- read.tree('../RAxML_bestTree.nwk')
+pg_map <- read.delim('../PG_accessions.txt')
+head(pg_map)
+
+phenoData <- as.data.frame(readxl::read_xls('../suscep_data.xls',skip = 1))
+phenoData <- phenoData[phenoData$`Isolates from (city)`=='Nijmegen',]
+```
+
+Map isolate IDs from susceptibility data to PGxxx strain names:
+```{r map}
+pgNames <- mapvalues(phenoData$Isolate_ID,
+                               from = c(pg_map$acc,'Reference'),
+                               to = c(pg_map$pg,'Reference'))
+
+phenoData$Isolate_ID <- pgNames
+names(phenoData)[1] <- 'id'
+rownames(phenoData) <- pgNames
+head(phenoData)
+```
+
+Replace '0' and '1' with 'susceptible' and 'resistant' in the susceptibility data:
+```{r replace01}
+phenoData[,6:12] <- replace(phenoData[,6:12],
+                            phenoData[,6:12]=='0',
+                            'susceptible')
+phenoData[,6:12] <- replace(phenoData[,6:12],
+                            phenoData[,6:12]=='1',
+                            'resistant')
+```
+
+Plot tree with recombination events removed, overlaying susceptible/resistant calls (see separately uploaded pdf for a nicer version of the figure):
+```{r plot_noRecomb, e, error=FALSE, warning=FALSE, message=FALSE, fig.height=10, fig.width=10}
+colors <- c('susceptible'='lightblue','resistant'='darkorange')
+
+p1 <- ggtree(tree_noRecomb, layout='circular') %<+% phenoData + geom_tiplab(align=T, linetype='dotted', linesize = 0.3, size=1.2)
+
+gheatmap(p1, phenoData[,6:12],width = 0.2,offset = 1200,font.size = 1.2,colnames_angle=90,hjust=0.5) + scale_fill_manual(values=colors)
+
+ggsave('PG_allABX_noRecomb.pdf',width=8,height=8,units='in')
+```
+
+Do the same for the tree with recombination events included (again, see separately uploaded pdf for a nicer version of the figure):
+```{r plot_withRecomb, e, error=FALSE, warning=FALSE, message=FALSE, fig.height=10, fig.width=10}
+colors <- c('susceptible'='lightblue','resistant'='darkorange')
+
+p2 <- ggtree(tree_withRecomb, layout='circular') %<+% phenoData + geom_tiplab(align=T, linetype='dotted', linesize = 0.3, size=1.2)
+
+gheatmap(p2, phenoData[,6:12],width = 0.2,offset = 0.012,font.size = 1.2,colnames_angle=90,hjust=0.5) + scale_fill_manual(values=colors)
+
+ggsave('PG_allABX_withRecomb.pdf',width=8,height=8,units='in')
+```

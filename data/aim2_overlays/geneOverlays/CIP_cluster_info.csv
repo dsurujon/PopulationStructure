@@ -1,0 +1,12 @@
+panX_cluster,panX_description,T4_locusTag,
+GC00000154_1,putative_ABC_transporter_ATP-binding_protein,NA,"(<100 bp downstream of SP_2075, ""multidrug efflux ABC transporter subunit PatA"")"
+GC00000154_2,yheI_putative_multidrug_resistance_ABC_transporter_ATP-binding/permease_protein_YheI,NA,"(<100 bp downstream of SP_2075, ""multidrug efflux ABC transporter subunit PatA"")"
+GC00000181_1,gyrA_DNA_gyrase_subunit_A,SP_1219,
+GC00000181_2,parC_DNA_topoisomerase_4_subunit_A,SP_1219,
+GC00000342_1,capD_UDP-glucose_4-epimerase,SP_0358,
+GC00000342_2,capD_UDP-glucose_4-epimerase,SP_0358,
+GC00000342_3,fcl_GDP-L-fucose_synthase,SP_0358,
+GC00000783,Pyridoxal_phosphate_homeostasis_protein,SP_1665,
+GC00000831,infA_Translation_initiation_factor_IF-1,SP_0232,
+GC00000955,murE_UDP-N-acetylmuramoyl-L-alanyl-D-glutamate--L-_lysine_ligase,SP_1530,
+GC00001220,glyS_Glycine--tRNA_ligase_beta_subunit,SP_1474,
