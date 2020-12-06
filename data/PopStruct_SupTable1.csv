@@ -1,0 +1,71 @@
+Gene,Strain,Experiment,Gene.Name,Gene.Description,Category
+SP_0273,TIGR4,T4_KAN,fusA,elongation factor G,Translation
+SP_0358,TIGR4,T4_KAN,cps4J,capsular polysaccharide biosynthesis protein Cps4J,Capsule metabolism
+SP_1508,TIGR4,T4_KAN,atpD,"ATP synthase F1, beta subunit",Energy metabolism
+SP_1888,TIGR4,T4_KAN,amiE,Oligopeptide transport ATP-binding protein AmiE,Membrane transport
+SP_1897,TIGR4,T4_KAN,rafE,sugar ABC transporter substrate-binding protein,Membrane transport
+SP_0358,TIGR4,T4_LVX,cps4J,capsular polysaccharide biosynthesis protein Cps4J,Capsule metabolism
+SP_0855,TIGR4,T4_LVX,parC,"DNA topoisomerase IV, A subunit, Gram-positive",Replication
+SP_1219,TIGR4,T4_LVX,ayrA,"DNA gyrase, subunit A",Replication
+SP_1772,TIGR4,T4_LVX,,,Structural proteins
+SP_0336,TIGR4,T4_PEN,,Penicillin-binding protein 2x,Cell wall metabolism
+SP_0350,TIGR4,T4_PEN,cps4E,capsular polysaccharide biosynthesis protein Cps4E,Capsule metabolism
+SP_1274,TIGR4,T4_PEN,licD2,Lipopolysaccharide cholinephosphotransferase LicD2 ,Cell wall metabolism
+SP_1358,TIGR4,T4_PEN,,"Heterodimeric multi-drug efflux ABC transporter, permease/ATP-binding subunit 1",Membrane transport
+SP_1530,TIGR4,T4_PEN,murE,UDP-N-acetylmuramoyl-L-alanyl-D-glutamate--L-lysine ligase,Cell wall metabolism
+SP_2205,TIGR4,T4_PEN,,c-di-AMP phosphodiesterase,
+SP_1961,TIGR4,T4_RIF,rpoB,DNA-directed RNA polymerase beta subunit,Transcription
+SP_0350,TIGR4,T4_VNC,cps4E,capsular polysaccharide biosynthesis protein Cps4E,Capsule metabolism
+SP_1067,TIGR4,T4_VNC,ftsW,cell division protein FtsW,Cell division
+SP_0232,TIGR4,T4_CIP,infA,translation initiation factor IF-1,Translation
+SP_0358,TIGR4,T4_CIP,cps4J,capsular polysaccharide biosynthesis protein Cps4J,Capsule metabolism
+SP_0855,TIGR4,T4_CIP,parC,"DNA topoisomerase IV, A subunit, Gram-positive",Replication
+SP_1219,TIGR4,T4_CIP,gyrA,"DNA gyrase, subunit A",Replication
+SP_1474,TIGR4,T4_CIP,glyS,Glycine--tRNA ligase beta subunit,Translation
+SP_1530,TIGR4,T4_CIP,murE,UDP-N-acetylmuramoyl-L-alanyl-D-glutamate--L-lysine ligase,Cell wall metabolism
+SP_1665,TIGR4,T4_CIP,ylmE,YlmE Protein,Cell division
+SP_0012,TIGR4,T4_CEF,hptA,Hypoxanthine-guanine phosphoribosyltransferase,Nucleotide metabolism
+SP_0336,TIGR4,T4_CEF,,Penicillin-binding protein 2x,Cell wall metabolism
+SP_0396,TIGR4,T4_CEF,,PTS system mannitol-specific transporter subunit IIA,Membrane transport
+SP_0423,TIGR4,T4_CEF,accB,acetyl-CoA carboxylase biotin carboxyl carrier protein subunit,Lipid metabolism
+SP_0798,TIGR4,T4_CEF,ciaR,"DNA-binding response regulator, OmpR family",Signal transduction
+SP_0966,TIGR4,T4_CEF,pavA,adherence and virulence protein A,Cellular community
+SP_1327,TIGR4,T4_CEF,,Hypothetical Protein,Carbohydrate metabolism
+SP_1569,TIGR4,T4_CEF,clpX,ATP-dependent Clp protease ATP-binding subunit,"Folding, sorting, degradation"
+SP_1733,TIGR4,T4_CEF,prpC,Serine/threonine protein phosphatase PrpC,Signal transduction
+SP_1887,TIGR4,T4_CEF,amiF,Oligopeptide transport ATP-binding protein AmiF,Membrane transport
+SP_2172,TIGR4,T4_CEF,cdcR,Zinc homeostasis trancsriptional regulator,Transcription
+SP_2175,TIGR4,T4_CEF,dltB,D-alanyl transfer protein DltB,Various metabolism
+SP_0609,TIGR4,T4_CEF,,"amino acid ABC transporter, amino acid-binding protein",Membrane transport
+SPD_RS05980,D39,D39_URA,carB,"Carbamoyl-phosphate synthase, large subunit",Nucleotide metabolism
+SPD_RS05985,D39,D39_URA,carA,"Carbamoyl-phosphate synthase, small subunit",Nucleotide metabolism
+SPD_RS05990,D39,D39_URA,pyrB,Aspartate carbamoyltransferase,Nucleotide metabolism
+SPD_RS05995,D39,D39_URA,pyrR,Bifunctional pyrimidine regulatory protein/uracil phosphoribosyltransferase,Transcription
+SPD_RS07340,D39,D39_URA,,Hypothetical Protein,
+SPD_RS07345,D39,D39_URA,,Hypothetical Protein,
+SPD_RS07350,D39,D39_URA,,Hypothetical Protein,
+SPD_RS07355,D39,D39_URA,,Endoribonuclease L-PSP,Various metabolism
+SPD_RS07360,D39,D39_URA,engB,Ribosome biogenesis GTP-binding protein YsxC,Translation
+SPD_RS07365,D39,D39_URA,clpX,ATP-dependent Clp protease ATP-binding subunit,"Folding, sorting, degradation"
+SPD_RS02150,D39,D39_VAL,ilvB,acetolactate synthase catalytic subunit (EC 2.2.1.6),Amino acid metabolism
+SPD_RS02155,D39,D39_VAL,ilvH,acetolactate synthase 3 regulatory subunit (EC 2.2.1.6),Amino acid metabolism
+SPD_RS02160,D39,D39_VAL,ilvC,ketol-acid reductoisomerase (EC 1.1.1.86),Amino acid metabolism
+SPD_RS02280,D39,D39_VAL,,PTS system lactose-specific transporter subunit IIBC,Membrane transport
+SPD_RS07335,D39,D39_VAL,,pyridine nucleotide-disulfide oxidoreductase family protein,Nucleotide metabolism
+SPD_RS07340,D39,D39_VAL,,Hypothetical Protein,
+SPD_RS07345,D39,D39_VAL,,Hypothetical Protein,
+SPD_RS07350,D39,D39_VAL,,Hypothetical Protein,
+SPD_RS07355,D39,D39_VAL,,Endoribonuclease L-PSP,Various metabolism
+SPD_RS07360,D39,D39_VAL,engB,Ribosome biogenesis GTP-binding protein YsxC,Translation
+SPD_RS07365,D39,D39_VAL,clpX,ATP-dependent Clp protease ATP-binding subunit,"Folding, sorting, degradation"
+SPT_RS02905,19F,19F_KAN,nusA,transcription elongation factor/antiterminator,Transcription
+SPT_RS06300,19F,19F_KAN,rluD,Ribosomal large subunit pseudouridine synthase D,Translation
+SPT_RS02525,19F,19F_LVX,,sortase,"Folding, sorting, degradation"
+SPT_RS04985,19F,19F_LVX,gyrA,"DNA gyrase, subunit A",Replication
+SPT_RS06705,19F,19F_LVX,parC,"DNA topoisomerase IV, A subunit, Gram-positive",Replication
+SPT_RS06925,19F,19F_LVX,gyrB,DNA gyrase subunit B,Transcription
+SPT_RS09625,19F,19F_RIF,rpoB,DNA-directed RNA polymerase beta subunit,Transcription
+SPT_RS05490,19F,19F_VNC,ftsW,cell division protein FtsW,Cell division
+SPT_RS04985,19F,19F_CIP,gyrA,"DNA gyrase, subunit A",Replication
+SPT_RS06500,19F,19F_CIP,hsdR,"putative type I restriction-modification system, R subunit",DNA repair and editing
+SPT_RS06705,19F,19F_CIP,parC,"DNA topoisomerase IV, A subunit, Gram-positive",Replication
