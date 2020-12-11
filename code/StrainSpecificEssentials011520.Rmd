@@ -1,0 +1,144 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(eval = FALSE)
+
+require("knitr")
+opts_knit$set(root.dir = 'D:/defne/Documents/BC/TVO/pangenome/Essentials2020/')
+```
+
+Read in essentiality data
+```{r}
+essentials <- read.csv('For_Tim/All_essentials.csv', header=T, stringsAsFactors = F)
+
+library(tidyr)
+essentials_long <- essentials[,c('MCL_Sub', 'Strain', 'locus', 'zbar')]
+essentials_long_unique <- unique(essentials_long[,c(1:3)])
+essentials_wide_tb <- pivot_wider(essentials_long_unique, id_cols = Strain, names_from=MCL_Sub, values_from=locus)
+
+essentials_wide_df <- as.data.frame(essentials_wide_tb)
+essentials_wide_df[,c(2:3749)] <- sapply(c(2:3749), function(x){lengths(essentials_wide_df[[x]])})
+```
+
+The genes in the core genome will not help in any kind of strain-classification. Omit those
+```{r}
+gene_pa_all <- essentials_wide_df[,c(2:3749)]
+gene_pa_accessory <- gene_pa_all[,colSums(gene_pa_all)<22]
+
+gene_pa_accessory <- cbind(essentials_wide_df[[1]],gene_pa_accessory)
+names(gene_pa_accessory)[1] <- "Strain"
+```
+
+For a given gene, get its zbar value, merge with the presence-absence table, and try to find features that explain this zbar 
+```{r}
+library(glmnet)
+library(plotmo)
+library(ggplot2)
+```
+
+```{r}
+essentialgene <- "SP_1569"
+zbars <- essentials[essentials$Old_locus_TIGR4==essentialgene, c('Strain', 'zbar')]
+pa_zbar <- merge(gene_pa_accessory, zbars, by="Strain")
+X <- as.matrix(pa_zbar[,c(2:2370)])
+y <- pa_zbar[[2371]]
+
+cvfit <- cv.glmnet(X, y, nfolds = 5)
+lbd <- cvfit$lambda.1se
+png( paste0('regression_zbar/', essentialgene, '_CV.png'))
+plot(cvfit, xvar="lambda")
+dev.off()
+
+fit <- glmnet(X, y)
+coefs_FIT <- coef(fit, s=lbd)
+coefs_FIT_df <- data.frame('Feature'= row.names(coefs_FIT)[which(coefs_FIT!=0)],
+                       'Coefficient' = coefs_FIT[which(coefs_FIT!=0)]
+                       )
+
+coefs_FIT_df <- merge(coefs_FIT_df, unique(essentials[,c('MCL_Sub', 'Product', "Old_locus_TIGR4")]),
+                      by.x="Feature", by.y="MCL_Sub", all.x=T, all.y=F)
+outcsvname <- paste0('regression_zbar/', essentialgene, '.csv')
+write.csv(coefs_FIT_df, outcsvname, row.names=F)
+
+# plot zbar of essentialgene vs presence of each coefficient in the model
+features <- as.character(coefs_FIT_df$Feature[2:nrow(coefs_FIT_df)])
+i <- 1
+for (feature in features){
+  mydf <- pa_zbar[,c('Strain', 'zbar', feature)]
+  names(mydf)[3]<-"Presence"
+  mydf$Presence <- as.logical(mydf$Presence)
+  mydf$Strain <- as.character(mydf$Strain)
+  ggplot(mydf, aes(x=reorder(Strain, zbar), y=zbar, fill=Presence))+geom_bar(stat = "identity")+theme_bw()+
+    xlab(paste0('Presence of cluster ', feature))+ 
+    theme(axis.text.x = element_text(angle = 90, hjust = 1))
+  outfigname<-paste0('regression_zbar/',essentialgene, '_', feature, '.png')
+  ggsave(outfigname, width=8, height=6, units="in")
+}
+```
+
+Turn the above into a function, and apply to all strain-specific essential genes
+```{r}
+zbar_reg <- function(essentialgene){
+  
+  zbars <- essentials[essentials$MCL_Sub==essentialgene, c('Strain', 'zbar')]
+  pa_zbar <- merge(gene_pa_accessory, zbars, by="Strain")
+  X <- as.matrix(pa_zbar[,c(2:2370)])
+  y <- pa_zbar[[2371]]
+  
+  cvfit <- cv.glmnet(X, y, nfolds = 5)
+  lbd <- cvfit$lambda.1se
+  png( paste0('regression_zbar/', essentialgene, '_CV.png'))
+  plot(cvfit, xvar="lambda")
+  dev.off()
+  
+  fit <- glmnet(X, y)
+  coefs_FIT <- coef(fit, s=lbd)
+  coefs_FIT_df <- data.frame('Feature'= row.names(coefs_FIT)[which(coefs_FIT!=0)],
+                         'Coefficient' = coefs_FIT[which(coefs_FIT!=0)]
+                         )
+  
+  coefs_FIT_df <- merge(coefs_FIT_df, unique(essentials[,c('MCL_Sub', 'Product', "Old_locus_TIGR4")]),
+                        by.x="Feature", by.y="MCL_Sub", all.x=T, all.y=F)
+  outcsvname <- paste0('regression_zbar/', essentialgene, '.csv')
+  write.csv(coefs_FIT_df, outcsvname, row.names=F)
+
+  if (nrow(coefs_FIT_df)>1){
+    # plot zbar of essentialgene vs presence of each coefficient in the model
+    features <- as.character(coefs_FIT_df$Feature[2:nrow(coefs_FIT_df)])
+    for (feature in features){
+      mydf <- pa_zbar[,c('Strain', 'zbar', feature)]
+      names(mydf)[3]<-"Presence"
+      mydf$Presence <- as.logical(mydf$Presence)
+      mydf$Strain <- as.character(mydf$Strain)
+      ggplot(mydf, aes(x=reorder(Strain, zbar), y=zbar, fill=Presence))+geom_bar(stat = "identity")+theme_bw()+
+        xlab(paste0('Presence of cluster ', feature))+ 
+        theme(axis.text.x = element_text(angle = 90, hjust = 1))
+      outfigname<-paste0('regression_zbar/',essentialgene, '_', feature, '.png')
+      ggsave(outfigname, width=8, height=6, units="in")
+    }
+  }else{print('No features were found')}
+  
+  return(coefs_FIT_df)
+    
+}
+
+# identify strain specific essential genes
+core_essentials <- read.csv('For_Tim/Essentialome_coord.csv', header=T, stringsAsFactors = F)
+ss_essentials <- core_essentials$MCL_Sub[core_essentials$Z_min<0.99304]
+
+#for each str. specific essential gene, fit a model on the presence/absence of the
+#accessory genes. if there is at least one "explanatory gene" in this model, add 
+# to the all_coefficients table
+all_coefficients <- data.frame()
+for (eg in ss_essentials){
+  regout <- zbar_reg(eg)
+  regout$Gene <- eg
+  if(nrow(regout)>1){all_coefficients <- rbind(all_coefficients, regout)}
+}
+
+names(all_coefficients) <- c('ExplanatoryFeature', 'Coefficient', 'ExplanatoryFeature.GeneProduct', 'ExplanatoryFeatre.T4', 'StrainspecificEssential')
+write.csv(all_coefficients, 'ExplanatoryGenes_StrainSpecificEssential.csv', row.names=F)
+```
